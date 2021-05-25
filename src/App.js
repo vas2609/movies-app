@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+/* eslint-disable no-undef */
 import './App.css';
+import "antd/dist/antd.css";
+import {Spin} from 'antd';
+import Main from './components/mainComponent/Main';
+import { connect } from "react-redux";
+import { Route, Switch } from "react-router-dom";
+import Single from './components/singlComponent/Single';
+import Header from './components/header/heade';
+import Footer from './components/footer/Footer';
 
-function App() {
+function App(props) {
+
+
+  
+let { load } = props;
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="pageContainer">
+      <div className="pageWrapper">
+        <Header />
+        <Switch>
+          <Route path="/" exact component={Main} />
+          <Route path="/single/:id" exact component={Single} />
+        </Switch>
+      </div>
+      {load && (
+        <div className="spinner">
+          <Spin />
+        </div>
+      )}
+      <Footer />
     </div>
   );
 }
 
-export default App;
+let mapStateToProps = (state) => {
+  return {
+    load: state.loading,
+  };
+};
+
+
+export default connect(mapStateToProps)(App);

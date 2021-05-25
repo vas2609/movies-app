@@ -1,0 +1,10 @@
+.header{
+   display: flex;
+    background-color: steelblue;
+    height: 40px;
+    justify-content: space-around;
+    align-items: center;
+}
+.header a{
+    color: white;
+}

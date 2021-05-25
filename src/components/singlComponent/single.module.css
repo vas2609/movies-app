@@ -1,0 +1,29 @@
+
+
+.container{
+    display: flex;
+    border: 1.5px gray solid;
+    border-radius: 5px;
+    height: 378px;
+    margin: 30px;
+    align-content: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center
+}
+.paragraf{
+    text-align: center;
+    font-size: xx-large;
+}
+
+.container h2 h3{
+    margin-bottom: 250px;
+    margin-left: 50px;
+   
+}
+.piture{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
