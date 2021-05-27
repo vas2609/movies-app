@@ -5,6 +5,7 @@ let defaultState = {
   move: [],
   comments: null,
   singleMuve: [],
+  storage:[],
   error:null,
   loading: false
 };
@@ -36,6 +37,7 @@ let reducer = (state = defaultState, action) =>{
           singleMuve: single,
         };
       }
+
       default:
         return state;
     }

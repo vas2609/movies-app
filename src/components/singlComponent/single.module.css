@@ -14,7 +14,7 @@
 }
 .paragraf{
     text-align: center;
-    font-size: xx-large;
+    font-size: large;
 }
 
 .container h2 h3{
@@ -26,4 +26,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.list ul{
+    font-size: small;
+    padding: 10px;
+    
+}
+
+.list li{
+   list-style: none;
+   padding-left: 15px;
+   color: rgb(44, 156, 0) !important;
+  
 }

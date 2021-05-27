@@ -1,8 +1,10 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect } from "react";
 import Style from './single.module.css';
 import { Image, Rate } from "antd";
 import { connect } from "react-redux";
 import { getSingleMove } from "../../store/action";
+import AddComment from "./comments/AddComments";
 
 function Single(props) {
 
@@ -13,13 +15,9 @@ function Single(props) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-let downLink = props.singleMuve.torrents.map((item) => {
-  return item.url;
-});
+  let { genres } = props.singleMuve;
 
-console.log(downLink);
-
-
+  
 
   return (
     <div>
@@ -31,9 +29,11 @@ console.log(downLink);
           <h2>{props.singleMuve.title}</h2>
           <h3>{props.singleMuve.slug}</h3>
           <Rate disabled defaultValue={Math.ceil(props.singleMuve.rating)} />
-          <h4>
-            <a href={downLink} target='blank'> Torren Link </a>
-          </h4>
+          <div className={Style.list}>
+            <ul>
+              <li>{` ${genres}`}</li>
+            </ul>
+          </div>
         </div>
       </div>
       <div className={Style.paragraf}>
@@ -45,7 +45,9 @@ console.log(downLink);
         <Image src={props.singleMuve.background_image_original} width={700} />
       </div>
       <hr />
-      <div></div>
+      <div>
+        <AddComment />
+      </div>
     </div>
   );
 }

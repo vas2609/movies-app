@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function Cards(props){
 
     const { Meta } = Card;
-console.log(props, 'heyhey');
+
     return (
       <div>
         <Link to={`/single/${props.id}`}>
